@@ -21,9 +21,24 @@
     <ClCompile Include="ApuntesSistemasOperativosUNI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\ConsoleControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2InputSistem\InputSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutoThreads\ThreadTuto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ConsoleControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2InputSistem\InputConsts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2InputSistem\InputSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

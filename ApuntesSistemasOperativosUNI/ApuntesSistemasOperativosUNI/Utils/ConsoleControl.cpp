@@ -63,7 +63,7 @@ int ConsoleControl::ReadNextKey()
 
 
 	if (_kbhit) {
-		KB_code = getch();
+		KB_code = _getch();
 
 	}
 
@@ -77,7 +77,7 @@ int ConsoleControl::WaitForRearNextKey()
 	while (KB_code == 0)
 	{
 		if (_kbhit) {
-			KB_code = getch();
+			KB_code = _getch();
 
 		}
 	}
@@ -94,7 +94,7 @@ char ConsoleControl::WaitForReadNextChar()
 	while (c == 0)
 	{
 		if (_kbhit) {
-			c = getch();
+			c = _getch();
 
 		}
 	}

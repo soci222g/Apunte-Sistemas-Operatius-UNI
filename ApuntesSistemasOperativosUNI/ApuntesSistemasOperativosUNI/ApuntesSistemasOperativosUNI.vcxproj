@@ -124,9 +124,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ApuntesSistemasOperativosUNI.cpp" />
+    <ClCompile Include="2InputSistem\InputSystem.cpp" />
+    <ClCompile Include="Utils\ConsoleControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutoThreads\ThreadTuto.h" />
+    <ClInclude Include="2InputSistem\InputConsts.h" />
+    <ClInclude Include="2InputSistem\InputSystem.h" />
+    <ClInclude Include="Utils\ConsoleControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
