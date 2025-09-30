@@ -35,7 +35,7 @@
     <ClInclude Include="Utils\ConsoleControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="2InputSistem\InputConsts.h">
+    <ClInclude Include="2InputSistem\InputsConsts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="2InputSistem\InputSystem.h">

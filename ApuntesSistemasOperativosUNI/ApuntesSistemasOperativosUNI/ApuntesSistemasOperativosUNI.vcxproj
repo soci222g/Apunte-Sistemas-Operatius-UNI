@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutoThreads\ThreadTuto.h" />
-    <ClInclude Include="2InputSistem\InputConsts.h" />
+    <ClInclude Include="2InputSistem\InputsConsts.h" />
     <ClInclude Include="2InputSistem\InputSystem.h" />
     <ClInclude Include="Utils\ConsoleControl.h" />
   </ItemGroup>

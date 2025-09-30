@@ -2,8 +2,9 @@
 #include<string>
 #include<list>
 
-//#include"Utils/ConsoleControl.h"
+#include"Utils/ConsoleControl.h"
 #include"1TutoThreads/ThreadTuto.h"
+#include"2InputSistem/InputSystem.h"
 
 #include <functional>
 
@@ -20,19 +21,58 @@ void TestLambda(SumaFunction funcion) {
 
 }
 typedef std::list<std::list<int>> ListaDeListasINT; // permet renumbrar sistema de guardat com variavles o functions i les pots renumbrar.
+
+
+
+/*
+std::string name = "Marco";
+
+ListaDeListasINT listaDeLista;
+
+//una funcio lanmda permet guarda contingut de una funcio en una varaible.
+	SumaFunction functionQueHaceCosasPeroEsUnaVariable = [name](int a, int b){ //aixo es una estructura de una funcio lambda aixo es per copia, normalment son punters.
+	std::cout << "Esto no se como per funciona XD --> " << name << std::endl;
+	return a + b;
+	};
+
+TestLambda(functionQueHaceCosasPeroEsUnaVariable);
+*/
+
 int main()
 {
-	std::string name = "Marco";
+	InputSystem* IS = new InputSystem();
+	InputSystem::KeyBinding* KB = IS->addListener(K_1, []() {
+		CC::Lock();
+		std::cout << "prest 1" << std::endl;
+		CC::Unlock();
+	});
+	InputSystem::KeyBinding* KB = IS->addListener(K_2, []() {
+		CC::Lock();
+		std::cout << "prest 2" << std::endl;
+		CC::Unlock();
+		});
+	InputSystem::KeyBinding* KB = IS->addListener(K_3, []() {
+		CC::Lock();
+		std::cout << "prest 3" << std::endl;
+		CC::Unlock();
+		});
+	InputSystem::KeyBinding* KB = IS->addListener(K_4, []() {
+		CC::Lock();
+		std::cout << "prest 4" << std::endl;
+		CC::Unlock();
+		});
 
-	ListaDeListasINT listaDeLista;
 
-	//una funcio lanmda permet guarda contingut de una funcio en una varaible.
-		SumaFunction functionQueHaceCosasPeroEsUnaVariable = [name](int a, int b){ //aixo es una estructura de una funcio lambda aixo es per copia, normalment son punters.
-		std::cout << "Esto no se como per funciona XD --> " << name << std::endl;
-		return a + b;
-		};
 
-	TestLambda(functionQueHaceCosasPeroEsUnaVariable);
+
+
+
+	IS->StartListener();
+
+	while (true)
+	{
+
+	}
 }
 
 
