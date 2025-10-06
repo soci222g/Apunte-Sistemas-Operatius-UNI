@@ -125,12 +125,15 @@
   <ItemGroup>
     <ClCompile Include="ApuntesSistemasOperativosUNI.cpp" />
     <ClCompile Include="2InputSistem\InputSystem.cpp" />
+    <ClCompile Include="Preguntes\Preguntes.cpp" />
     <ClCompile Include="Utils\ConsoleControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutoThreads\ThreadTuto.h" />
     <ClInclude Include="2InputSistem\InputsConsts.h" />
     <ClInclude Include="2InputSistem\InputSystem.h" />
+    <ClInclude Include="Preguntes\preguntas.h" />
+    <ClInclude Include="Preguntes\timer.h" />
     <ClInclude Include="Utils\ConsoleControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
