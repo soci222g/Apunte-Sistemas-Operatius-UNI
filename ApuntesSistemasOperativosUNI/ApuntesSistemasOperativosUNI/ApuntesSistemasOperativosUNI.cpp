@@ -41,27 +41,29 @@ TestLambda(functionQueHaceCosasPeroEsUnaVariable);
 int main()
 {
 	InputSystem* IS = new InputSystem();
-	InputSystem::KeyBinding* KB = IS->addListener(K_1, []() {
+	InputSystem::KeyBinding* KB1 = IS->addListener(K_1, []() {
 		CC::Lock();
 		std::cout << "prest 1" << std::endl;
 		CC::Unlock();
 	});
-	InputSystem::KeyBinding* KB = IS->addListener(K_2, []() {
+
+	InputSystem::KeyBinding* KB2 = IS->addListener(K_2, []() {
 		CC::Lock();
 		std::cout << "prest 2" << std::endl;
 		CC::Unlock();
 		});
-	InputSystem::KeyBinding* KB = IS->addListener(K_3, []() {
+
+	InputSystem::KeyBinding* KB3 = IS->addListener(K_3, []() {
 		CC::Lock();
 		std::cout << "prest 3" << std::endl;
 		CC::Unlock();
 		});
-	InputSystem::KeyBinding* KB = IS->addListener(K_4, []() {
+
+	InputSystem::KeyBinding* KB4 = IS->addListener(K_4, []() {
 		CC::Lock();
 		std::cout << "prest 4" << std::endl;
 		CC::Unlock();
 		});
-
 
 
 
