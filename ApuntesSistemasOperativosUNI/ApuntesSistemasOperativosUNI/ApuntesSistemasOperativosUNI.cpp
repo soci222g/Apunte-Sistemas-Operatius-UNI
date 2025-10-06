@@ -3,8 +3,12 @@
 #include<list>
 
 #include"Utils/ConsoleControl.h"
+#include"Utils/Timer.h"
+
 #include"1TutoThreads/ThreadTuto.h"
 #include"2InputSistem/InputSystem.h"
+
+
 
 #include <functional>
 
@@ -38,8 +42,12 @@ ListaDeListasINT listaDeLista;
 TestLambda(functionQueHaceCosasPeroEsUnaVariable);
 */
 
-int main()
-{
+
+
+//input sistem
+
+/* 
+
 	InputSystem* IS = new InputSystem();
 	InputSystem::KeyBinding* KB1 = IS->addListener(K_1, []() {
 		CC::Lock();
@@ -70,6 +78,36 @@ int main()
 
 
 	IS->StartListener();
+*/
+
+
+
+
+int main()
+{
+
+
+
+	Timer::SleepThread(3000);
+
+	Timer::StartTimer(3000, []() {
+
+		std::cout << "3 secondsTimer" << std::endl;
+
+		});
+
+	int times = 0;
+	int maxThread = 5;
+
+	Timer::statLoopTimer(1000, [&times, maxThread]() {
+		CC::Lock();
+		std::cout << "1 second Element" << std::endl;
+		CC::Unlock();
+
+		
+		});
+
+
 
 	while (true)
 	{
