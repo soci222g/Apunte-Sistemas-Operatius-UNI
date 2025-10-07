@@ -7,10 +7,13 @@
 
 #include"1TutoThreads/ThreadTuto.h"
 #include"2InputSistem/InputSystem.h"
+#include"3NodeMap/INodeContent.h"
 
 
 
 #include <functional>
+#include "3NodeMap/Node.h"
+#include "3NodeMap/NodeMap.h"
 
 typedef std::function<int(int, int)> SumaFunction;
 
@@ -82,29 +85,63 @@ TestLambda(functionQueHaceCosasPeroEsUnaVariable);
 
 
 
+class Tree : public INodeContent {
+	
+	void Draw(Vector2 offset) override {
+		CC::Lock();
+		CC::SetColor(CC::DARKBLUE, CC::BLACK);
+		CC::SetPosition(offset.X, offset.Y);
+		std::cout << "T";
+
+		CC::Unlock();
+
+	}
+
+};
+
+class Potatoe {
+
+};
+
 
 int main()
 {
 
+	NodeMap* myMap = new NodeMap(Vector2(30, 30), Vector2(2, 2));
 
+	Tree* t1 = new Tree();
+	Tree* t2 = new Tree();
+	Tree* t3 = new Tree();
+	Tree* t4 = new Tree();
+	Tree* t5 = new Tree();
 
-	Timer::SleepThread(3000);
+	myMap->SafePickNode(Vector2(0, 0), [t1](Node* node) {
 
-	Timer::StartTimer(3000, []() {
-
-		std::cout << "3 secondsTimer" << std::endl;
-
+		node->setContent(t1);
 		});
 
-	int times = 0;
-	int maxThread = 5;
 
-	Timer::statLoopTimer(1000, [&times, maxThread]() {
-		CC::Lock();
-		std::cout << "1 second Element" << std::endl;
-		CC::Unlock();
+	myMap->SafePickNode(Vector2(29, 0), [t2](Node* node) {
 
-		
+		node->setContent(t2);
+		});
+
+
+	myMap->SafePickNode(Vector2(0, 29), [t3](Node* node) {
+
+		node->setContent(t3);
+		});
+
+
+	myMap->SafePickNode(Vector2(16, 16), [t4](Node* node) {
+
+		node->setContent(t4);
+		});
+
+
+	myMap->SafePickNode(Vector2(29, 29), [t5](Node* node) {
+
+		node->setContent(t5);
 		});
 
 
