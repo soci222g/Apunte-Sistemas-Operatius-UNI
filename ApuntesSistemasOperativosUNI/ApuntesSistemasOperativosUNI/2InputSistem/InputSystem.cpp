@@ -117,7 +117,7 @@ void InputSystem::ListenLoop()
 	_State = Listening;
 
 	State currentState = _State;
-	CC::clearKeyBufer();
+	CC::ClearKeyBuffer();
 	_classMutex.unlock();
 
 

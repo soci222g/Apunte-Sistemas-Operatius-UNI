@@ -107,44 +107,7 @@ class Potatoe {
 int main()
 {
 
-	NodeMap* myMap = new NodeMap(Vector2(30, 30), Vector2(2, 2));
-
-	Tree* t1 = new Tree();
-	Tree* t2 = new Tree();
-	Tree* t3 = new Tree();
-	Tree* t4 = new Tree();
-	Tree* t5 = new Tree();
-
-	myMap->SafePickNode(Vector2(0, 0), [t1](Node* node) {
-
-		node->setContent(t1);
-		});
-
-
-	myMap->SafePickNode(Vector2(29, 0), [t2](Node* node) {
-
-		node->setContent(t2);
-		});
-
-
-	myMap->SafePickNode(Vector2(0, 29), [t3](Node* node) {
-
-		node->setContent(t3);
-		});
-
-
-	myMap->SafePickNode(Vector2(16, 16), [t4](Node* node) {
-
-		node->setContent(t4);
-		});
-
-
-	myMap->SafePickNode(Vector2(29, 29), [t5](Node* node) {
-
-		node->setContent(t5);
-		});
-
-
+	
 
 	while (true)
 	{

@@ -38,8 +38,13 @@ void NodeMap::UnSafeDraw()
 
 void NodeMap::SafePickNode(Vector2 position, SafePick safePickAction)
 {
-	
+	_sizeMutex.lock();
+	_gridMutex.lock();
 
+	Node* node = UnSafeGetNode(position);
+
+	_sizeMutex.unlock();
+	_gridMutex.unlock();
 
 	node->lock();
 	safePickAction(node);

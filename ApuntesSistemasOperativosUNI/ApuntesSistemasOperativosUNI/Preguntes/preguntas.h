@@ -11,7 +11,7 @@ public:
 	int GetNumRespuestas() { return numeroPreguntes; }
 
 
-	~Preguntes();
+
 
 private:
 	int preguntaCorrecta;
