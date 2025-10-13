@@ -1,4 +1,6 @@
-#include"Timer.h"
+#include "Timer.h"
+#include <thread>
+#include <windows.h>
 
 void Timer::SleepThread(unsigned long timeRequiredMilisecons)
 {
@@ -24,7 +26,7 @@ void Timer::StartTimer(unsigned long timeRequiredMilisecons, OnTimeElapsed onTim
 	std::thread* thread = new std::thread([timeRequiredMilisecons, onTimeElapse]() {
 		Sleep(timeRequiredMilisecons);
 		onTimeElapse();
-		});
+	});
 
 	thread->detach();
 }
@@ -40,7 +42,7 @@ void Timer::StartLoopTimer(unsigned long timeRequiredMilisecons, OnTimeElapsedWi
 			continueLoop = onTimeElapse();
 		}
 
-		});
+	});
 
 	thread->detach();
 }

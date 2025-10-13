@@ -1,59 +1,51 @@
 #include "ConsoleControl.h"
+#include <conio.h>
 
-ConsoleControl ConsoleControl::GetInstance()
+HANDLE ConsoleControl::GetConsole() 
 {
-	static ConsoleControl instance; //si ja esta creat el reutilitza estelvian recursos.
-
-	return instance;
+	return GetInstance()._console;
 }
 
-HANDLE ConsoleControl::GetConsole()
+void ConsoleControl::SetColor(ConsoleColor TextColor, ConsoleColor BackgroundColor)
 {
-	return GetInstance()._controle;
-}
-
-void ConsoleControl::SetColor(ConsoleColor TextColor, ConsoleColor backgroundColor)
-{
-	WORD color = (backgroundColor << 4) | TextColor; //aixo crae una maskara de bits
+	WORD color = (BackgroundColor << 4) | TextColor;
 	SetConsoleTextAttribute(GetConsole(), color);
 }
 
 void ConsoleControl::SetPosition(short int x, short int y)
 {
-	COORD pos{ x,y };
+	COORD pos = { x, y };
 	SetConsoleCursorPosition(GetConsole(), pos);
 }
 
 void ConsoleControl::Clear()
 {
-	//FillwithCharacters(' ', WHITE, BLACK);
-	std::cout << "\033[2j\033[1;1H"; //enviem una ordre directa a la console per nateja el buffer.
-
+	std::cout << "\033[2J\033[1;1H";//Clear the console and move the cursor to the top left corner
+	//ClearCharacter(' ', WHITE, BLACK);//Another less optimal way to clean
 }
 
-void ConsoleControl::FillwithCharacters(char character, ConsoleColor textColor, ConsoleColor backgroundColor)
+void ConsoleControl::FillWithCharacter(char character, ConsoleColor TextColor, ConsoleColor BackgroundColor)
 {
-
-	COORD topLeft = { 0,0 }; //agafa adal a la esquerra
-
+	COORD topLeft = { 0, 0 };
 	CONSOLE_SCREEN_BUFFER_INFO screen;
-	DWORD Written;
+	DWORD written;
 	HANDLE console = GetConsole();
-
-	WORD color = (backgroundColor << 4) | textColor;
-
+	WORD color = (BackgroundColor << 4) | TextColor;
 	GetConsoleScreenBufferInfo(console, &screen);
-
-	FillConsoleOutputCharacterA(console, character, screen.dwSize.X * screen.dwSize.Y, topLeft, &Written); //llenamos del character
-	FillConsoleOutputAttribute(console, color, screen.dwSize.X * screen.dwSize.Y, topLeft, &Written); //llenamos del color
+	FillConsoleOutputCharacterA(
+		console, character, screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+	);
+	FillConsoleOutputAttribute(
+		console, color,
+		screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+	);
 	SetConsoleCursorPosition(console, topLeft);
-
 }
 
-void ConsoleControl::clearKeyBufer()
+void ConsoleControl::ClearKeyBuffer()
 {
-	while (_kbhit()) { //mira si el buffer te algun input en espera
-		_getch(); // nateja el buffer
+	while (_kbhit()) {
+		_getch();
 	}
 }
 
@@ -61,46 +53,47 @@ int ConsoleControl::ReadNextKey()
 {
 	int KB_code = 0;
 
-
-	if (_kbhit) {
+	if (_kbhit())
+	{
 		KB_code = _getch();
-
 	}
-
 	return KB_code;
 }
 
-int ConsoleControl::WaitForRearNextKey()
+int ConsoleControl::WaithForReadNextKey()
 {
 	int KB_code = 0;
 
 	while (KB_code == 0)
 	{
-		if (_kbhit) {
+		if (_kbhit())
+		{
 			KB_code = _getch();
-
 		}
 	}
-	
 
 	return KB_code;
 }
 
 char ConsoleControl::WaitForReadNextChar()
 {
-
 	char c = 0;
 
 	while (c == 0)
 	{
-		if (_kbhit) {
+		if (_kbhit())
+		{
 			c = _getch();
-
 		}
 	}
 
-
 	return c;
+}
+
+ConsoleControl ConsoleControl::GetInstance() {
+	static ConsoleControl instance;
+
+	return instance;
 }
 
 void ConsoleControl::Lock()
@@ -112,5 +105,3 @@ void ConsoleControl::Unlock()
 {
 	GetInstance()._consoleMutex->unlock();
 }
-
-

@@ -1,6 +1,4 @@
 #pragma once
-
-#include<Windows.h>
 #include <mutex>
 #include <functional>
 
@@ -18,7 +16,3 @@ public:
 	static void StartTimer(unsigned long timeRequired, OnTimeElapsed onTimeElapse);
 	static void StartLoopTimer(unsigned long timeRequired, OnTimeElapsedWithLoop onTimeElapse);
 };
-
-
-
-
