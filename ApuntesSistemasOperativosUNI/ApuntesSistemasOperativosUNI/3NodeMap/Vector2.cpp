@@ -2,36 +2,38 @@
 
 Vector2::Vector2()
 {
-	this->X = 0;
-	this->Y = 0;
 }
 
-
-Vector2::Vector2(int X, int Y)
+Vector2::Vector2(int x, int y)
 {
-	this->X = X;
-	this->Y = Y;
+	this->X = x;
+	this->Y = y;
 }
 
-Vector2 Vector2::operator+= (Vector2 other) {
+Vector2 Vector2::operator+=(Vector2 other)
+{
 	return *this + other;
 }
 
-Vector2 Vector2::operator+ (Vector2 other) {
+Vector2 Vector2::operator+(Vector2 other)
+{
 	Vector2 result = *this;
 	result.X += other.X;
 	result.Y += other.Y;
+
 	return result;
 }
 
-Vector2 Vector2::operator-= (Vector2 other) {
+Vector2 Vector2::operator-=(Vector2 other)
+{
 	return *this - other;
 }
 
-Vector2 Vector2::operator- (Vector2 other) {
+Vector2 Vector2::operator-(Vector2 other)
+{
 	Vector2 result = *this;
 	result.X -= other.X;
 	result.Y -= other.Y;
+
 	return result;
 }
-

@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\JordiGratacosGamper\Documents\Apunte-Sistemas-Operatius-UNI\ApuntesSistemasOperativosUNI\ApuntesSistemasOperativosUNI\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,12 +125,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="3NodeMap\NodeMap.cpp" />
-    <ClCompile Include="ApuntesSistemasOperativosUNI.cpp" />
     <ClCompile Include="2InputSistem\InputSystem.cpp" />
     <ClCompile Include="3NodeMap\INodeContent.cpp" />
     <ClCompile Include="3NodeMap\Node.cpp" />
+    <ClCompile Include="4Json\Fruta.cpp" />
+    <ClCompile Include="4Json\ICodeable.cpp" />
+    <ClCompile Include="4Json\Banana.cpp" />
+    <ClCompile Include="4Json\Apple.cpp" />
+    <ClCompile Include="dist\jsoncpp.cpp" />
+    <ClCompile Include="InputSytem\InputSystem.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Preguntes\Preguntes.cpp" />
     <ClCompile Include="3NodeMap\Vector2.cpp" />
+    <ClCompile Include="SnakeGame.cpp" />
+    <ClCompile Include="Snake\Snake.cpp" />
+    <ClCompile Include="TutorialThreads\ThreadTutorial.cpp" />
+    <ClCompile Include="Utils\ConsoleControl.cpp" />
+    <ClCompile Include="Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutoThreads\ThreadTuto.h" />
@@ -138,9 +150,39 @@
     <ClInclude Include="3NodeMap\INodeContent.h" />
     <ClInclude Include="3NodeMap\Node.h" />
     <ClInclude Include="3NodeMap\NodeMap.h" />
+    <ClInclude Include="4Json\Fruta.h" />
+    <ClInclude Include="4Json\ICodeable.h" />
+    <ClInclude Include="4Json\Banana.h" />
+    <ClInclude Include="4Json\Apple.h" />
+    <ClInclude Include="dist\json\json-forwards.h" />
+    <ClInclude Include="dist\json\json.h" />
+    <ClInclude Include="include\json\allocator.h" />
+    <ClInclude Include="include\json\assertions.h" />
+    <ClInclude Include="include\json\config.h" />
+    <ClInclude Include="include\json\forwards.h" />
+    <ClInclude Include="include\json\json.h" />
+    <ClInclude Include="include\json\json_features.h" />
+    <ClInclude Include="include\json\reader.h" />
+    <ClInclude Include="include\json\value.h" />
+    <ClInclude Include="include\json\version.h" />
+    <ClInclude Include="include\json\writer.h" />
+    <ClInclude Include="InputSytem\InputsConsts.h" />
+    <ClInclude Include="InputSytem\InputSystem.h" />
+    <ClInclude Include="PreguntasYRespuestas\Preguntas.h" />
     <ClInclude Include="Preguntes\preguntas.h" />
     <ClInclude Include="Preguntes\timer.h" />
     <ClInclude Include="3NodeMap\Vector2.h" />
+    <ClInclude Include="Snake\Snake.h" />
+    <ClInclude Include="TutorialThreads\ThreadTutorial.h" />
+    <ClInclude Include="Utils\ConsoleControl.h" />
+    <ClInclude Include="Utils\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\PreventInBuildInstalls.cmake" />
+    <None Include="include\PreventInSourceBuilds.cmake" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
