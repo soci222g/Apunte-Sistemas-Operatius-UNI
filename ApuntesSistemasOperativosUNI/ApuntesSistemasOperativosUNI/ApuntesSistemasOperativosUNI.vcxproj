@@ -125,7 +125,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="3NodeMap\NodeMap.cpp" />
-    <ClCompile Include="2InputSistem\InputSystem.cpp" />
     <ClCompile Include="3NodeMap\INodeContent.cpp" />
     <ClCompile Include="3NodeMap\Node.cpp" />
     <ClCompile Include="4Json\Fruta.cpp" />
@@ -135,9 +134,7 @@
     <ClCompile Include="dist\jsoncpp.cpp" />
     <ClCompile Include="InputSytem\InputSystem.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Preguntes\Preguntes.cpp" />
     <ClCompile Include="3NodeMap\Vector2.cpp" />
-    <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="Snake\Snake.cpp" />
     <ClCompile Include="TutorialThreads\ThreadTutorial.cpp" />
     <ClCompile Include="Utils\ConsoleControl.cpp" />
@@ -168,8 +165,6 @@
     <ClInclude Include="include\json\writer.h" />
     <ClInclude Include="InputSytem\InputsConsts.h" />
     <ClInclude Include="InputSytem\InputSystem.h" />
-    <ClInclude Include="PreguntasYRespuestas\Preguntas.h" />
-    <ClInclude Include="Preguntes\preguntas.h" />
     <ClInclude Include="Preguntes\timer.h" />
     <ClInclude Include="3NodeMap\Vector2.h" />
     <ClInclude Include="Snake\Snake.h" />
